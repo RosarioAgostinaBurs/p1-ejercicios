@@ -39,4 +39,24 @@ function cargarAlumno() {
 
 function mostrarLista() {
 
+    const div = document.querySelector(".container");
+
+    div.innerHTML = "";
+
+    for(alumno of alumnos) {
+
+        div.innerHTML += `<h1>${alumno.nombre}</h1>`;
+        div.innerHTML += `<h2>Materias</h2>`;
+
+        let str = `<ul>`;
+
+        for(materia of alumno.materias) {
+            str += `<li>${materia.nombre_materia} - ${materia.nota}</li>`;
+        }
+
+        str += `</ul>`;
+
+        div.innerHTML += str;
+    }
+
 }
